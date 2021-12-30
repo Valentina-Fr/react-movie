@@ -1,4 +1,4 @@
-function MovieCard({movie}) {
+function MovieCard({movie, getDetails}) {
     const posterUri = "https://image.tmdb.org/t/p/w342";
     const imagePlaceholder = "https://www.altavod.com/assets/images/poster-placeholder.png";
     return (
@@ -8,7 +8,7 @@ function MovieCard({movie}) {
                 <h5 className="card-title">{movie.title}</h5>
             </div>
             <div className="card-footer">
-                <a href="/movie" className="btn btn-primary">See Details</a>
+                <a href="/movie" onClick={ () => getDetails(movie.id) } className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">See Details</a>
             </div>
         </div>
     );
